@@ -1,0 +1,12 @@
+com.sismics
+com.sismics.docs
+com.sismics.docs.core.dao.jpa
+com.sismics.docs.core.listener.async
+com.sismics.docs.core.service
+com.sismics.docs.core.util
+com.sismics.docs.core.util.indexing
+com.sismics.docs.rest
+com.sismics.docs.rest.resource
+com.sismics.docs.rest.util
+com.sismics.util
+com.sismics.util.format
