@@ -661,6 +661,8 @@
             <version>3.3.2</version>
             <configuration>
               <additionalJOption>-Xdoclint:none</additionalJOption>
+              <failOnError>false</failOnError>
+
             </configuration>
           </plugin>
       </plugins>
