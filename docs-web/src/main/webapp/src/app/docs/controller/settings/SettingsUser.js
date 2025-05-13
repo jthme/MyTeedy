@@ -24,4 +24,28 @@ angular.module('docs').controller('SettingsUser', function($scope, $state, Resta
   $scope.editUser = function(user) {
     $state.go('settings.user.edit', { username: user.username });
   };
+
+  $scope.registrationRequests = [];
+
+  Restangular.one('registration').one('admin').getList('list').then(function (list) {
+    $scope.registrationRequests = list;
+    });
+
+  $scope.approve = function (id) {
+    Restangular.one('registration').one('admin').post('accept/' + id)
+      .then(function () {
+        $scope.registrationRequests = $scope.registrationRequests.filter(function (r) {
+          return r.id !== id;
+        });
+      });
+  };
+
+  $scope.reject = function (id) {
+    Restangular.one('registration').one('admin').post('reject/' + id)
+      .then(function () {
+        $scope.registrationRequests = $scope.registrationRequests.filter(function (r) {
+          return r.id !== id;
+        });
+      });
+  };
 });

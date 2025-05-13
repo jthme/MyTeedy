@@ -30,3 +30,31 @@
     <div ui-view="user"></div>
   </div>
 </div>
+
+<div>
+  <h3>待审核注册请求</h3>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>用户名</th>
+        <th>邮箱</th>
+        <th>备注</th>
+        <th>提交时间</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="req in registrationRequests">
+        <td>{{ req.name }}</td>
+        <td>{{ req.email }}</td>
+        <td>{{ req.message }}</td>
+        <td>{{ req.createdAt }}</td>
+        <td>
+          <button class="btn btn-success btn-sm" ng-click="approve(req.id)">接受</button>
+          <button class="btn btn-danger btn-sm" ng-click="reject(req.id)">拒绝</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p ng-if="registrationRequests.length === 0" class="text-muted">暂无注册请求。</p>
+</div>

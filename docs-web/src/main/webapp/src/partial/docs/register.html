@@ -1,0 +1,11 @@
+<div class="login-form">
+  <h2>用户注册</h2>
+  <form ng-submit="register()">
+    <input type="text" placeholder="用户名" ng-model="form.name" required>
+    <input type="email" placeholder="邮箱" ng-model="form.email" required>
+    <input type="password" placeholder="密码" ng-model="form.password" required>
+    <textarea placeholder="备注" ng-model="form.message"></textarea>
+    <button type="submit">提交注册申请</button>
+  </form>
+  <div ng-if="status">{{ status }}</div>
+</div>
