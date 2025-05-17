@@ -22,5 +22,4 @@ angular.module('docs').controller('registration-admin', function ($scope, $http)
           });
         });
     };
-
   });
